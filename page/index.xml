@@ -19,12 +19,13 @@
     <item>
       <title>About</title>
       <link>https://sean-doody.github.io/socilabs/about/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://sean-doody.github.io/socilabs/about/</guid>
-      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
-Hugo makes use of a variety of open source projects including:
- https://github.</description>
+      <description>What is SociLabs?
+SociLabs is an initiative started by Sean Doody, a sociology PhD candidate and computational sociologist at George Mason University, to serve as a codelab repository consisting of tutorials, examples, and other useful information for sociologists interested in data science and computational methods.
+Who is this for?
+Initially, the target audience was envsioned to be sociology graduate students new to programming who are interested in using computational and data science methods in their research, including machine learning, natural language processing, data management, interacting with APIs, etc.</description>
     </item>
     
     <item>
