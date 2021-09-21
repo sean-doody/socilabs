@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Learn how to install Python, create programming environments, and install and use packages.'><title>Install Python &amp; Anaconda</title>
+
+<link rel='canonical' href='https://sean-doody.github.io/socilabs/p/install-python/'>
+
+<link rel="stylesheet" href="/socilabs/scss/style.min.css"><meta property='og:title' content='Install Python &amp; Anaconda'>
+<meta property='og:description' content='Learn how to install Python, create programming environments, and install and use packages.'>
+<meta property='og:url' content='https://sean-doody.github.io/socilabs/p/install-python/'>
+<meta property='og:site_name' content='SociLabs'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='python' /><meta property='article:tag' content='conda' /><meta property='article:tag' content='basics' /><meta property='article:published_time' content='2021-09-21T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-09-21T00:00:00&#43;00:00'/><meta property='og:image' content='https://sean-doody.github.io/socilabs/p/install-python/python.jpg' />
+<meta name="twitter:title" content="Install Python &amp; Anaconda">
+<meta name="twitter:description" content="Learn how to install Python, create programming environments, and install and use packages."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://sean-doody.github.io/socilabs/p/install-python/python.jpg' />
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="https://sean-doody.github.io/socilabs/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/socilabs/p/install-python/">
+                <img src="/socilabs/p/install-python/python_hu10dcf594c52feaf835a7b27535ee84db_6082746_800x0_resize_q75_box.jpg"
+                        srcset="/socilabs/p/install-python/python_hu10dcf594c52feaf835a7b27535ee84db_6082746_800x0_resize_q75_box.jpg 800w, /socilabs/p/install-python/python_hu10dcf594c52feaf835a7b27535ee84db_6082746_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="534" 
+                        loading="lazy"
+                        alt="Featured image of post Install Python &amp; Anaconda" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/socilabs/categories/python/" style="background-color: #2a9d8f; color: #fff;">
+                Python
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/socilabs/p/install-python/">Install Python &amp; Anaconda</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Learn how to install Python, create programming environments, and install and use packages.
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 21, 2021</time>
+            </div>
+        
+
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p>Python is an extremely popular programming language that has quickly become the language of choice for programmers, data scientists, and computational social scientists alike due to its rich ecosystem of statistical and data management libraries, a vibrant open source community, and its clean and easy to read syntax.</p>
+<p>While Python can be installed by itself from the <a class="link" href="#" >official website</a>, for most social science researchers, it makes much more sense to install Python as part of the <a class="link" href="https://anaconda.com"  target="_blank" rel="noopener"
+    >Anaconda</a> distribution. Anaconda is data science platform that supports all platforms—Windows, macOS, and Linux—and makes installing and managing Python and its scientific computing libraries a breeze.</p>
+<h2 id="what-youll-learn">What You&rsquo;ll Learn</h2>
+<ul>
+<li>How to install Python as part of the Anaconda distribution.</li>
+<li>How to install packages with <code>conda</code> and <code>pip</code>.</li>
+<li>How to create and manage programming environments with <code>conda</code>.</li>
+</ul>
+<p>What You&rsquo;ll Need</p>
+<ul>
+<li>A computer running a recent version of Windows, macOS, or Linux.WWWW</li>
+</ul>
+<p>Let&rsquo;s get started!</p>
+<blockquote>
+<p><strong>Note:</strong> All tutorial examples will be illustrated using a Windows PC.</p>
+</blockquote>
+<h2 id="download-the-installer">Download the Installer</h2>
+<ul>
+<li><a class="link" href="https://www.anaconda.com/download/#windows"  target="_blank" rel="noopener"
+    >Click here</a> to go to the Windows Anaconda download page (Mac users <a class="link" href="https://www.anaconda.com/downloads#macos"  target="_blank" rel="noopener"
+    >click here</a>).</li>
+<li>On the site, you will see the following download landing page:</li>
+</ul>
+<p><figure 
+	>
+	<a href="https://i.imgur.com/Q0ZiqjX.png" >
+		<img src="https://i.imgur.com/Q0ZiqjX.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<ul>
+<li>Click the green <code>Download</code> button.</li>
+<li>Save the <code>exe</code> file to a folder of your choice.</li>
+<li>When the download completes, continue to the next section of this tutorial.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<ul>
+<li>Navigate to where you downloaded Anaconda.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> On PC, this will be a <code>.exe</code> file. On macOS, this will be a <code>.dmg</code> file.</p>
+</blockquote>
+<ul>
+<li>Double click the file to launch the installer.</li>
+<li>Click <code>Next</code>.</li>
+<li>Read and accept the licensing the agreement.</li>
+<li>Choose if you want to install Anaconda for only you (&ldquo;Just Me&rdquo;) or every account on your computer.
+<ul>
+<li><em>As a rule of thumb, it is probably best to choose &ldquo;Just Me.&quot;</em></li>
+</ul>
+</li>
+<li>Choose where you&rsquo;d like to install Anaconda and click <code>Next</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> It is generally safest and recommended to install Anaconda in the default directory.</p>
+</blockquote>
+<p><figure 
+	>
+	<a href="https://docs.anaconda.com/_images/win-install-destination.png" >
+		<img src="https://docs.anaconda.com/_images/win-install-destination.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<ul>
+<li><strong>Important:</strong> Make sure both <code>Add Anaconda3 to my PATH environment variable</code> and <code>Register Anaconda3 as my default Python 3.x</code> <em><strong>are selected</strong></em>!</li>
+</ul>
+<p><figure 
+	>
+	<a href="https://docs.anaconda.com/_images/win-install-options.png" >
+		<img src="https://docs.anaconda.com/_images/win-install-options.png"
+			
+			
+			
+			loading="lazy"
+			>
+	</a>
+	
+</figure></p>
+<ul>
+<li>Click the <code>Install</code> button (this can take several minutes).</li>
+<li>Anaconda will offer you the option to install optional software packages. Choose if you&rsquo;d like to try these software. Do note that they are completely optional:
+Anaconda will function perfectly fine without them.</li>
+<li>When the installer completes, click <code>Finish</code> to exit the installer.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> We will be illustrating how to use Anaconda from your computer&rsquo;s terminal (e.g., <code>command line</code> on Windows, <code>Terminal</code> on macOS and Linux).
+This is the recommended usage of Anaconda. If you would like to use the Anaconda GUI, consult the <a class="link" href="https://docs.continuum.io/anaconda/navigator/"  target="_blank" rel="noopener"
+    >documentation</a>
+on the Anaconda Navigator application.</p>
+</blockquote>
+<p>The following steps should work on <strong>all</strong> operating systems.</p>
+<h3 id="check-for-anaconda">Check for Anaconda:</h3>
+<ul>
+<li>Launch your computer&rsquo;s terminal app.
+<ul>
+<li><strong>Windows:</strong> click <code>Start</code> and type <code>cmd</code>; right-click <code>Command Prompt</code> and click <code>Run as Administrator</code>.</li>
+<li><strong>macOS:</strong> open your <code>Terminal</code> app; if <code>Terminal</code> is not in your dock, you can find it in the <code>Launchpad</code>.</li>
+</ul>
+</li>
+<li>In your computer&rsquo;s terminal window, type <code>conda</code> just as below and hit enter.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">
+$ &gt; conda
+
+</code></pre></div><ul>
+<li>Your terminal should output a message similar to the one below:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">usage: conda-script.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-V<span class="o">]</span> <span class="nb">command</span> ...
+
+conda is a tool <span class="k">for</span> managing and deploying applications, environments and packages.
+
+Options:
+
+positional arguments:
+  <span class="nb">command</span>
+    clean        Remove unused packages and caches.
+    compare      Compare packages between conda environments.
+    config       Modify configuration values in .condarc. This is modeled after the git config command. Writes to the user
+                 .condarc file <span class="o">(</span>C:<span class="se">\U</span>sers<span class="se">\[</span>USERNAME<span class="o">]</span><span class="se">\.</span>condarc<span class="o">)</span> by default.
+    create       Create a new conda environment from a list of specified packages.
+    <span class="nb">help</span>         Displays a list of available conda commands and their <span class="nb">help</span> strings.
+    info         Display information about current conda install.
+    init         Initialize conda <span class="k">for</span> shell interaction. <span class="o">[</span>Experimental<span class="o">]</span>
+    install      Installs a list of packages into a specified conda environment.
+    list         List linked packages in a conda environment.
+    package      Low-level conda package utility. <span class="o">(</span>EXPERIMENTAL<span class="o">)</span>
+    remove       Remove a list of packages from a specified conda environment.
+    uninstall    Alias <span class="k">for</span> conda remove.
+    run          Run an executable in a conda environment. <span class="o">[</span>Experimental<span class="o">]</span>
+    search       Search <span class="k">for</span> packages and display associated information. The input is a MatchSpec, a query language <span class="k">for</span> conda
+                 packages. See examples below.
+    update       Updates conda packages to the latest compatible version.
+    upgrade      Alias <span class="k">for</span> conda update.
+
+optional arguments:
+  -h, --help     Show this <span class="nb">help</span> message and exit.
+  -V, --version  Show the conda version number and exit.
+
+conda commands available from other packages:
+  env
+</code></pre></div><ul>
+<li>If you see this output, Anaconda has been successfully installed.
+<ul>
+<li>You should also have two new applications installed on your computer: <code>Anaconda Navigator</code> and <code>Anaconda Prompt</code>.</li>
+</ul>
+</li>
+<li><code>conda</code> is shorthand for Anaconda, and its the command we will use to call Anaconda from your computer&rsquo;s terminal
+to install and manage all of your Python packages.</li>
+</ul>
+<h3 id="check-for-python">Check for Python:</h3>
+<ul>
+<li>In your terminal window, type <code>python</code> as below:</li>
+</ul>
+<pre tabindex="0"><code>$ &gt; python 
+</code></pre><ul>
+<li>Your terminal should now launch a Python prompt, as indicated by the following output:</li>
+</ul>
+<pre tabindex="0"><code>Python 3.8.10 (default, May 19 2021, 13:12:57) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre><ul>
+<li>If you see this output, Python has been successfully installed.</li>
+</ul>
+<p>Now, let&rsquo;s learn about creating and managing environments with <code>conda</code>.</p>
+<h2 id="what-are-environments">What are environments?</h2>
+<p>In Python, a programming environment (also known as a &ldquo;virtual environment&rdquo; or just an &ldquo;environment&rdquo;) is a
+self-contained ecosystem containing:</p>
+<ol>
+<li>Your Python interpreter.</li>
+<li>The Python libraries you have installed with <code>conda</code> or <code>pip</code>.</li>
+<li>The collection of relevant scripts related to your libraries and Python interpreter.</li>
+</ol>
+<p>Python environments are <strong>isolated</strong> from one another, meaning the packages and scripts installed
+in one environment do not interfere or interact with the packages and scripts in another environment.</p>
+<h2 id="why-use-environments">Why use environments?</h2>
+<p>You should <em>always</em> use a <strong>fresh</strong> and <strong>unique</strong> environment for <strong>every project</strong> you work on. There are four main reasons
+for this:</p>
+<ol>
+<li>Only installing the libraries necessary for a project to avoid dependency conflicts.</li>
+<li>Avoiding library version conflicts (e.g., some packages require different versions of the same library).</li>
+<li>Installing and using different versions Python.</li>
+<li>Allowing for easy reproducibility of your research and programming environment by providing a list
+of packages that other scholars can quickly install.</li>
+</ol>
+<h2 id="creating-environments-with-conda">Creating Environments with <code>conda</code></h2>
+<p>We can create, activate, and manage environments using <code>conda</code> in your computer&rsquo;s terminal.</p>
+<ul>
+<li>Launch your computer&rsquo;s terminal.</li>
+<li>We&rsquo;re now going to create an environment. I am just going to call it <code>test</code> for now.</li>
+<li>The syntax for creating a <code>conda</code> environment follows this order:
+<ol>
+<li>call <code>conda</code></li>
+<li>call the <code>create</code> command</li>
+<li>provide a name for your environment</li>
+</ol>
+</li>
+<li>Here&rsquo;s the code:</li>
+</ul>
+<pre tabindex="0"><code>$ &gt; conda create --name test
+</code></pre><ul>
+<li>After running the script, you should have an output that looks like this:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Collecting package metadata <span class="o">(</span>current_repodata.json<span class="o">)</span>: <span class="k">done</span>
+Solving environment: <span class="k">done</span>
+
+<span class="c1">## Package Plan ##</span>
+
+  environment location: **YOUR_PATH_HERE**<span class="se">\t</span>est
+
+
+
+Proceed <span class="o">([</span>y<span class="o">]</span>/n<span class="o">)</span>?
+</code></pre></div><ul>
+<li>Type <code>y</code> and hit enter to continue.</li>
+<li>You should see the following output:</li>
+</ul>
+<pre tabindex="0"><code>Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate test
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+</code></pre><h2 id="using-the-environment">Using the Environment</h2>
+<p>In order to use your <code>conda</code> environment, you need to call the <code>activate</code> command in your terminal.
+Since we named our environment <code>test</code>, we will tell <code>conda</code> to activate the <code>test</code> environment:</p>
+<pre tabindex="0"><code>$ &gt; conda activate test
+</code></pre><p>Your terminal should now look something like this (<strong>note:</strong> this will vary slightly by operating system):</p>
+<pre tabindex="0"><code>$ (test) &gt; 
+</code></pre><p>The parentheses around <code>test</code> tells you your current active <code>conda</code> environment.</p>
+<h2 id="closing-the-environment">Closing the Environment</h2>
+<p>When you are done using your environment, make sure you deactivate it. This is accomplished
+easily with the following command:</p>
+<pre tabindex="0"><code>$ (test) &gt; conda deactivate
+</code></pre><h2 id="installing-packages">Installing Packages</h2>
+<p>There are two primary ways to install packages in Python: (1.) using <code>conda</code> and (2.) using <code>pip</code>.
+It is recommended to use <code>conda</code> when you can, but in some cases, some libraries are not available
+in <code>conda</code>&rsquo;s repository. In that case, use <code>pip</code>. It is also easiest to install packages loaded
+from GitHub with <code>pip</code> as well.</p>
+<h3 id="installing-packages-with-conda">Installing Packages with Conda</h3>
+<blockquote>
+<p><strong>Note:</strong> Before installing packages, make sure you activate your <code>conda</code> environment.</p>
+</blockquote>
+<p>Usually, you will want to use <code>conda</code> to install Python packages. This can be accomplished
+easily from the terminal using the <code>install</code> argument:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ &gt; conda install PACKAGE_NAME_HERE
+</code></pre></div><p>An important caveat is that <code>conda</code> has differnt <em>channels</em> for installing packages. If you do
+not specify the channel when you install the package, the installation could take a very long time.
+Anaconda provides code snippets for all packages in its package repository. <a class="link" href="https://anaconda.org/anaconda/repo"  target="_blank" rel="noopener"
+    >Click here</a>
+to search the repository.</p>
+<p>Here&rsquo;s an example of choosing a channel when installing the <code>numpy</code> package:</p>
+<pre tabindex="0"><code>$ &gt; conda install -c conda-forge numpy
+</code></pre><p>By calling <code>-c</code> and <code>conda-forge</code>, <code>conda</code> knows to install <code>numpy</code> from the <code>conda-forge</code> channel.
+Often, specifying <code>-c conda-forge</code> will work, but consult the Anaconda documentation for your particular
+package.</p>
+<h3 id="installing-packages-with-pip">Installing Packages with Pip</h3>
+<p><code>pip</code> is Python&rsquo;s default package manager. While it comes installed with Python, it is a good
+idea to install <code>pip</code> with <code>conda</code> <strong>within</strong> each of your programming environments. This prevents
+<code>pip</code> from installig packages globally and creating conflicts:</p>
+<pre tabindex="0"><code>$ &gt; conda install pip
+</code></pre><p>Sometimes, <code>conda</code> will not have a package that you want, and you will need to use <code>pip</code>.
+In this case, <code>pip</code> is very similar to <code>conda</code>. Let&rsquo;s install the <a class="link" href="https://pypi.org/project/tabulate/"  target="_blank" rel="noopener"
+    >Tabulate</a>
+package with pip as an example:</p>
+<pre tabindex="0"><code>$ &gt; pip install tabulate
+</code></pre><blockquote>
+<p><strong>Note:</strong> Unlike <code>conda</code>, <code>pip</code> does not need to choose a channel to optimize
+downloads and installs.</p>
+</blockquote>
+<p><code>pip</code> is also great when you want to install a pacakge from GitHub,
+like so:</p>
+<pre tabindex="0"><code>$ &gt; pip install git+https://github.com/tabulate/tabulate.git
+</code></pre><h2 id="uninstalling-packages">Uninstalling Packages</h2>
+<p>Uninstalling packages follows the same basic syntax:</p>
+<pre tabindex="0"><code>$ &gt; conda uninstall PACKAGE_NAME_HERE
+$ &gt; pip uninstall PACKAGE_NAME_HERE
+</code></pre><p>Due to the potential for dependency conflicts, however, you are unlikely
+to uninstall packages much, if at all.</p>
+<blockquote>
+<p><strong>Note:</strong> Regardless of what compiler or IDE you are using, you must execute your
+Python scripts from within the environment you have installed your libraries in
+to use your libraries.</p>
+</blockquote>
+<h2 id="using-packages">Using Packages</h2>
+<p>To use the packages you install, you have to import them into your Python program,
+whether that be a standard Python script, an IDE, or a Jupyter Notebook (this assumes
+you have activated the appropriate programming environment).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import the default datetime library</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="c1"># Now you can use the methods from the tabulate package:</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Print year:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2021</span>
+</code></pre></div><p>Alternatively, you can import <em>submodules</em> of a library to call them directly:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">2021</span>
+</code></pre></div><h3 id="aliases">Aliases</h3>
+<p>Many Python packages are imported as aliases, which are usually shorthand representations
+of the full library name. For example, two extremely popular libraries that you will use
+on a regular basis, NumPy and Pandas, are aliased as <code>np</code> and <code>pd</code>, respectively:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Now you can call methods from these libraries with less text:</span>
+<span class="n">array_one</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">array_one</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+          <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="c1"># Load a file:</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;your_datac.csv&#34;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="s2">&#34;HEAD_OF_YOUR_DATA_HERE&#34;</span>
+</code></pre></div><h3 id="summary">Summary</h3>
+<p>Figuring out the submodules and aliases of the Python packages you use is something
+that comes from experience. Consult the API documentation of the packages you use
+to see specific examples about usage, imports, submodles, and aliases.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You have completed this tutorial!</p>
+<p>You learned:</p>
+<ol>
+<li>How to install Python with the Anaconda distribution.</li>
+<li>How to create programming environments for your projects.</li>
+<li>How to use <code>conda</code> and <code>pip</code> to install Python libraries.</li>
+<li>How to import libraries into your Python programs.</li>
+</ol>
+<p>The ins-and-outs of knowing which methods to use from the libraries you install,
+the specific syntax of libraries and submodules, and the common aliases used by
+different Python libraries is something that only comes with experience.</p>
+<p>So get out there, code, and have some fun!</p>
+<h3 id="important-resources">Important Resources</h3>
+<p>Here are some useful resources related to this tutorial:</p>
+<ol>
+<li><a class="link" href="https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html"  target="_blank" rel="noopener"
+    ><code>conda</code> documentation</a></li>
+<li><a class="link" href="https://pip.pypa.io/en/stable/"  target="_blank" rel="noopener"
+    ><code>pip</code> documentation</a></li>
+<li><a class="link" href="https://anaconda.org/anaconda/repo"  target="_blank" rel="noopener"
+    ><code>conda</code> package repository</a></li>
+<li><a class="link" href="https://pypi.org/"  target="_blank" rel="noopener"
+    ><code>pip</code> package repository (Python Package Index [PyPI])</a></li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/socilabs/tags/python/">python</a>
+        
+            <a href="/socilabs/tags/conda/">conda</a>
+        
+            <a href="/socilabs/tags/basics/">basics</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2021 SociLabs
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.2.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#what-youll-learn">What You&rsquo;ll Learn</a></li>
+    <li><a href="#download-the-installer">Download the Installer</a></li>
+    <li><a href="#installation">Installation</a>
+      <ol>
+        <li><a href="#check-for-anaconda">Check for Anaconda:</a></li>
+        <li><a href="#check-for-python">Check for Python:</a></li>
+      </ol>
+    </li>
+    <li><a href="#what-are-environments">What are environments?</a></li>
+    <li><a href="#why-use-environments">Why use environments?</a></li>
+    <li><a href="#creating-environments-with-conda">Creating Environments with <code>conda</code></a></li>
+    <li><a href="#using-the-environment">Using the Environment</a></li>
+    <li><a href="#closing-the-environment">Closing the Environment</a></li>
+    <li><a href="#installing-packages">Installing Packages</a>
+      <ol>
+        <li><a href="#installing-packages-with-conda">Installing Packages with Conda</a></li>
+        <li><a href="#installing-packages-with-pip">Installing Packages with Pip</a></li>
+      </ol>
+    </li>
+    <li><a href="#uninstalling-packages">Uninstalling Packages</a></li>
+    <li><a href="#using-packages">Using Packages</a>
+      <ol>
+        <li><a href="#aliases">Aliases</a></li>
+        <li><a href="#summary">Summary</a></li>
+      </ol>
+    </li>
+    <li><a href="#conclusion">Conclusion</a>
+      <ol>
+        <li><a href="#important-resources">Important Resources</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/socilabs/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

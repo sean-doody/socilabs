@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on SociLabs</title>
+    <link>https://sean-doody.github.io/socilabs/categories/python/</link>
+    <description>Recent content in Python on SociLabs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sean-doody.github.io/socilabs/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Python &amp; Anaconda</title>
+      <link>https://sean-doody.github.io/socilabs/p/install-python/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean-doody.github.io/socilabs/p/install-python/</guid>
+      <description>Python is an extremely popular programming language that has quickly become the language of choice for programmers, data scientists, and computational social scientists alike due to its rich ecosystem of statistical and data management libraries, a vibrant open source community, and its clean and easy to read syntax.
+While Python can be installed by itself from the official website, for most social science researchers, it makes much more sense to install Python as part of the Anaconda distribution.</description>
+    </item>
+    
+  </channel>
+</rss>

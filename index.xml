@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>SociLabs</title>
+        <link>https://sean-doody.github.io/socilabs/</link>
+        <description>Recent content on SociLabs</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sean-doody.github.io/socilabs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Install Python &amp; Anaconda</title>
+        <link>https://sean-doody.github.io/socilabs/p/install-python/</link>
+        <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://sean-doody.github.io/socilabs/p/install-python/</guid>
+        <description>&lt;img src="https://sean-doody.github.io/socilabs/p/install-python/python.jpg" alt="Featured image of post Install Python &amp; Anaconda" /&gt;&lt;p&gt;Python is an extremely popular programming language that has quickly become the language of choice for programmers, data scientists, and computational social scientists alike due to its rich ecosystem of statistical and data management libraries, a vibrant open source community, and its clean and easy to read syntax.&lt;/p&gt;
+&lt;p&gt;While Python can be installed by itself from the &lt;a class=&#34;link&#34; href=&#34;#&#34; &gt;official website&lt;/a&gt;, for most social science researchers, it makes much more sense to install Python as part of the &lt;a class=&#34;link&#34; href=&#34;https://anaconda.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Anaconda&lt;/a&gt; distribution. Anaconda is data science platform that supports all platforms—Windows, macOS, and Linux—and makes installing and managing Python and its scientific computing libraries a breeze.&lt;/p&gt;
+&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;How to install Python as part of the Anaconda distribution.&lt;/li&gt;
+&lt;li&gt;How to install packages with &lt;code&gt;conda&lt;/code&gt; and &lt;code&gt;pip&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;How to create and manage programming environments with &lt;code&gt;conda&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What You&amp;rsquo;ll Need&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A computer running a recent version of Windows, macOS, or Linux.WWWW&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&amp;rsquo;s get started!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; All tutorial examples will be illustrated using a Windows PC.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;download-the-installer&#34;&gt;Download the Installer&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.anaconda.com/download/#windows&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Click here&lt;/a&gt; to go to the Windows Anaconda download page (Mac users &lt;a class=&#34;link&#34; href=&#34;https://www.anaconda.com/downloads#macos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;click here&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;On the site, you will see the following download landing page:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://i.imgur.com/Q0ZiqjX.png&#34; &gt;
+		&lt;img src=&#34;https://i.imgur.com/Q0ZiqjX.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the green &lt;code&gt;Download&lt;/code&gt; button.&lt;/li&gt;
+&lt;li&gt;Save the &lt;code&gt;exe&lt;/code&gt; file to a folder of your choice.&lt;/li&gt;
+&lt;li&gt;When the download completes, continue to the next section of this tutorial.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Navigate to where you downloaded Anaconda.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; On PC, this will be a &lt;code&gt;.exe&lt;/code&gt; file. On macOS, this will be a &lt;code&gt;.dmg&lt;/code&gt; file.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Double click the file to launch the installer.&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Next&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Read and accept the licensing the agreement.&lt;/li&gt;
+&lt;li&gt;Choose if you want to install Anaconda for only you (&amp;ldquo;Just Me&amp;rdquo;) or every account on your computer.
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;As a rule of thumb, it is probably best to choose &amp;ldquo;Just Me.&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Choose where you&amp;rsquo;d like to install Anaconda and click &lt;code&gt;Next&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; It is generally safest and recommended to install Anaconda in the default directory.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://docs.anaconda.com/_images/win-install-destination.png&#34; &gt;
+		&lt;img src=&#34;https://docs.anaconda.com/_images/win-install-destination.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Important:&lt;/strong&gt; Make sure both &lt;code&gt;Add Anaconda3 to my PATH environment variable&lt;/code&gt; and &lt;code&gt;Register Anaconda3 as my default Python 3.x&lt;/code&gt; &lt;em&gt;&lt;strong&gt;are selected&lt;/strong&gt;&lt;/em&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://docs.anaconda.com/_images/win-install-options.png&#34; &gt;
+		&lt;img src=&#34;https://docs.anaconda.com/_images/win-install-options.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			&gt;
+	&lt;/a&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the &lt;code&gt;Install&lt;/code&gt; button (this can take several minutes).&lt;/li&gt;
+&lt;li&gt;Anaconda will offer you the option to install optional software packages. Choose if you&amp;rsquo;d like to try these software. Do note that they are completely optional:
+Anaconda will function perfectly fine without them.&lt;/li&gt;
+&lt;li&gt;When the installer completes, click &lt;code&gt;Finish&lt;/code&gt; to exit the installer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; We will be illustrating how to use Anaconda from your computer&amp;rsquo;s terminal (e.g., &lt;code&gt;command line&lt;/code&gt; on Windows, &lt;code&gt;Terminal&lt;/code&gt; on macOS and Linux).
+This is the recommended usage of Anaconda. If you would like to use the Anaconda GUI, consult the &lt;a class=&#34;link&#34; href=&#34;https://docs.continuum.io/anaconda/navigator/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;documentation&lt;/a&gt;
+on the Anaconda Navigator application.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The following steps should work on &lt;strong&gt;all&lt;/strong&gt; operating systems.&lt;/p&gt;
+&lt;h3 id=&#34;check-for-anaconda&#34;&gt;Check for Anaconda:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Launch your computer&amp;rsquo;s terminal app.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows:&lt;/strong&gt; click &lt;code&gt;Start&lt;/code&gt; and type &lt;code&gt;cmd&lt;/code&gt;; right-click &lt;code&gt;Command Prompt&lt;/code&gt; and click &lt;code&gt;Run as Administrator&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;macOS:&lt;/strong&gt; open your &lt;code&gt;Terminal&lt;/code&gt; app; if &lt;code&gt;Terminal&lt;/code&gt; is not in your dock, you can find it in the &lt;code&gt;Launchpad&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;In your computer&amp;rsquo;s terminal window, type &lt;code&gt;conda&lt;/code&gt; just as below and hit enter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;
+$ &amp;gt; conda
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Your terminal should output a message similar to the one below:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;usage: conda-script.py &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-h&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;-V&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; ...
+
+conda is a tool &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; managing and deploying applications, environments and packages.
+
+Options:
+
+positional arguments:
+  &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt;
+    clean        Remove unused packages and caches.
+    compare      Compare packages between conda environments.
+    config       Modify configuration values in .condarc. This is modeled after the git config command. Writes to the user
+                 .condarc file &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;C:&lt;span class=&#34;se&#34;&gt;\U&lt;/span&gt;sers&lt;span class=&#34;se&#34;&gt;\[&lt;/span&gt;USERNAME&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;condarc&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; by default.
+    create       Create a new conda environment from a list of specified packages.
+    &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;         Displays a list of available conda commands and their &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt; strings.
+    info         Display information about current conda install.
+    init         Initialize conda &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; shell interaction. &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Experimental&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+    install      Installs a list of packages into a specified conda environment.
+    list         List linked packages in a conda environment.
+    package      Low-level conda package utility. &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;EXPERIMENTAL&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+    remove       Remove a list of packages from a specified conda environment.
+    uninstall    Alias &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; conda remove.
+    run          Run an executable in a conda environment. &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;Experimental&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+    search       Search &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; packages and display associated information. The input is a MatchSpec, a query language &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; conda
+                 packages. See examples below.
+    update       Updates conda packages to the latest compatible version.
+    upgrade      Alias &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; conda update.
+
+optional arguments:
+  -h, --help     Show this &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt; message and exit.
+  -V, --version  Show the conda version number and exit.
+
+conda commands available from other packages:
+  env
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;If you see this output, Anaconda has been successfully installed.
+&lt;ul&gt;
+&lt;li&gt;You should also have two new applications installed on your computer: &lt;code&gt;Anaconda Navigator&lt;/code&gt; and &lt;code&gt;Anaconda Prompt&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;conda&lt;/code&gt; is shorthand for Anaconda, and its the command we will use to call Anaconda from your computer&amp;rsquo;s terminal
+to install and manage all of your Python packages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;check-for-python&#34;&gt;Check for Python:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;In your terminal window, type &lt;code&gt;python&lt;/code&gt; as below:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; python 
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Your terminal should now launch a Python prompt, as indicated by the following output:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Python 3.8.10 (default, May 19 2021, 13:12:57) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;If you see this output, Python has been successfully installed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now, let&amp;rsquo;s learn about creating and managing environments with &lt;code&gt;conda&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-environments&#34;&gt;What are environments?&lt;/h2&gt;
+&lt;p&gt;In Python, a programming environment (also known as a &amp;ldquo;virtual environment&amp;rdquo; or just an &amp;ldquo;environment&amp;rdquo;) is a
+self-contained ecosystem containing:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Your Python interpreter.&lt;/li&gt;
+&lt;li&gt;The Python libraries you have installed with &lt;code&gt;conda&lt;/code&gt; or &lt;code&gt;pip&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The collection of relevant scripts related to your libraries and Python interpreter.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Python environments are &lt;strong&gt;isolated&lt;/strong&gt; from one another, meaning the packages and scripts installed
+in one environment do not interfere or interact with the packages and scripts in another environment.&lt;/p&gt;
+&lt;h2 id=&#34;why-use-environments&#34;&gt;Why use environments?&lt;/h2&gt;
+&lt;p&gt;You should &lt;em&gt;always&lt;/em&gt; use a &lt;strong&gt;fresh&lt;/strong&gt; and &lt;strong&gt;unique&lt;/strong&gt; environment for &lt;strong&gt;every project&lt;/strong&gt; you work on. There are four main reasons
+for this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Only installing the libraries necessary for a project to avoid dependency conflicts.&lt;/li&gt;
+&lt;li&gt;Avoiding library version conflicts (e.g., some packages require different versions of the same library).&lt;/li&gt;
+&lt;li&gt;Installing and using different versions Python.&lt;/li&gt;
+&lt;li&gt;Allowing for easy reproducibility of your research and programming environment by providing a list
+of packages that other scholars can quickly install.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;creating-environments-with-conda&#34;&gt;Creating Environments with &lt;code&gt;conda&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;We can create, activate, and manage environments using &lt;code&gt;conda&lt;/code&gt; in your computer&amp;rsquo;s terminal.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Launch your computer&amp;rsquo;s terminal.&lt;/li&gt;
+&lt;li&gt;We&amp;rsquo;re now going to create an environment. I am just going to call it &lt;code&gt;test&lt;/code&gt; for now.&lt;/li&gt;
+&lt;li&gt;The syntax for creating a &lt;code&gt;conda&lt;/code&gt; environment follows this order:
+&lt;ol&gt;
+&lt;li&gt;call &lt;code&gt;conda&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;call the &lt;code&gt;create&lt;/code&gt; command&lt;/li&gt;
+&lt;li&gt;provide a name for your environment&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Here&amp;rsquo;s the code:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; conda create --name test
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;After running the script, you should have an output that looks like this:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Collecting package metadata &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;current_repodata.json&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;: &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+Solving environment: &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;## Package Plan ##&lt;/span&gt;
+
+  environment location: **YOUR_PATH_HERE**&lt;span class=&#34;se&#34;&gt;\t&lt;/span&gt;est
+
+
+
+Proceed &lt;span class=&#34;o&#34;&gt;([&lt;/span&gt;y&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/n&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;?
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Type &lt;code&gt;y&lt;/code&gt; and hit enter to continue.&lt;/li&gt;
+&lt;li&gt;You should see the following output:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate test
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;using-the-environment&#34;&gt;Using the Environment&lt;/h2&gt;
+&lt;p&gt;In order to use your &lt;code&gt;conda&lt;/code&gt; environment, you need to call the &lt;code&gt;activate&lt;/code&gt; command in your terminal.
+Since we named our environment &lt;code&gt;test&lt;/code&gt;, we will tell &lt;code&gt;conda&lt;/code&gt; to activate the &lt;code&gt;test&lt;/code&gt; environment:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; conda activate test
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Your terminal should now look something like this (&lt;strong&gt;note:&lt;/strong&gt; this will vary slightly by operating system):&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ (test) &amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The parentheses around &lt;code&gt;test&lt;/code&gt; tells you your current active &lt;code&gt;conda&lt;/code&gt; environment.&lt;/p&gt;
+&lt;h2 id=&#34;closing-the-environment&#34;&gt;Closing the Environment&lt;/h2&gt;
+&lt;p&gt;When you are done using your environment, make sure you deactivate it. This is accomplished
+easily with the following command:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ (test) &amp;gt; conda deactivate
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;installing-packages&#34;&gt;Installing Packages&lt;/h2&gt;
+&lt;p&gt;There are two primary ways to install packages in Python: (1.) using &lt;code&gt;conda&lt;/code&gt; and (2.) using &lt;code&gt;pip&lt;/code&gt;.
+It is recommended to use &lt;code&gt;conda&lt;/code&gt; when you can, but in some cases, some libraries are not available
+in &lt;code&gt;conda&lt;/code&gt;&amp;rsquo;s repository. In that case, use &lt;code&gt;pip&lt;/code&gt;. It is also easiest to install packages loaded
+from GitHub with &lt;code&gt;pip&lt;/code&gt; as well.&lt;/p&gt;
+&lt;h3 id=&#34;installing-packages-with-conda&#34;&gt;Installing Packages with Conda&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Before installing packages, make sure you activate your &lt;code&gt;conda&lt;/code&gt; environment.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Usually, you will want to use &lt;code&gt;conda&lt;/code&gt; to install Python packages. This can be accomplished
+easily from the terminal using the &lt;code&gt;install&lt;/code&gt; argument:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ &amp;gt; conda install PACKAGE_NAME_HERE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An important caveat is that &lt;code&gt;conda&lt;/code&gt; has differnt &lt;em&gt;channels&lt;/em&gt; for installing packages. If you do
+not specify the channel when you install the package, the installation could take a very long time.
+Anaconda provides code snippets for all packages in its package repository. &lt;a class=&#34;link&#34; href=&#34;https://anaconda.org/anaconda/repo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Click here&lt;/a&gt;
+to search the repository.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an example of choosing a channel when installing the &lt;code&gt;numpy&lt;/code&gt; package:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; conda install -c conda-forge numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;By calling &lt;code&gt;-c&lt;/code&gt; and &lt;code&gt;conda-forge&lt;/code&gt;, &lt;code&gt;conda&lt;/code&gt; knows to install &lt;code&gt;numpy&lt;/code&gt; from the &lt;code&gt;conda-forge&lt;/code&gt; channel.
+Often, specifying &lt;code&gt;-c conda-forge&lt;/code&gt; will work, but consult the Anaconda documentation for your particular
+package.&lt;/p&gt;
+&lt;h3 id=&#34;installing-packages-with-pip&#34;&gt;Installing Packages with Pip&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pip&lt;/code&gt; is Python&amp;rsquo;s default package manager. While it comes installed with Python, it is a good
+idea to install &lt;code&gt;pip&lt;/code&gt; with &lt;code&gt;conda&lt;/code&gt; &lt;strong&gt;within&lt;/strong&gt; each of your programming environments. This prevents
+&lt;code&gt;pip&lt;/code&gt; from installig packages globally and creating conflicts:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; conda install pip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Sometimes, &lt;code&gt;conda&lt;/code&gt; will not have a package that you want, and you will need to use &lt;code&gt;pip&lt;/code&gt;.
+In this case, &lt;code&gt;pip&lt;/code&gt; is very similar to &lt;code&gt;conda&lt;/code&gt;. Let&amp;rsquo;s install the &lt;a class=&#34;link&#34; href=&#34;https://pypi.org/project/tabulate/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Tabulate&lt;/a&gt;
+package with pip as an example:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; pip install tabulate
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Unlike &lt;code&gt;conda&lt;/code&gt;, &lt;code&gt;pip&lt;/code&gt; does not need to choose a channel to optimize
+downloads and installs.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;pip&lt;/code&gt; is also great when you want to install a pacakge from GitHub,
+like so:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; pip install git+https://github.com/tabulate/tabulate.git
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;uninstalling-packages&#34;&gt;Uninstalling Packages&lt;/h2&gt;
+&lt;p&gt;Uninstalling packages follows the same basic syntax:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ &amp;gt; conda uninstall PACKAGE_NAME_HERE
+$ &amp;gt; pip uninstall PACKAGE_NAME_HERE
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Due to the potential for dependency conflicts, however, you are unlikely
+to uninstall packages much, if at all.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Regardless of what compiler or IDE you are using, you must execute your
+Python scripts from within the environment you have installed your libraries in
+to use your libraries.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;using-packages&#34;&gt;Using Packages&lt;/h2&gt;
+&lt;p&gt;To use the packages you install, you have to import them into your Python program,
+whether that be a standard Python script, an IDE, or a Jupyter Notebook (this assumes
+you have activated the appropriate programming environment).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Import the default datetime library&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;datetime&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Now you can use the methods from the tabulate package:&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;datetime&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;datetime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2021&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Print year:&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2021&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Alternatively, you can import &lt;em&gt;submodules&lt;/em&gt; of a library to call them directly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;datetime&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;datetime&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;date&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;datetime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2021&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;date&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;year&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2021&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;aliases&#34;&gt;Aliases&lt;/h3&gt;
+&lt;p&gt;Many Python packages are imported as aliases, which are usually shorthand representations
+of the full library name. For example, two extremely popular libraries that you will use
+on a regular basis, NumPy and Pandas, are aliased as &lt;code&gt;np&lt;/code&gt; and &lt;code&gt;pd&lt;/code&gt;, respectively:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;numpy&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;np&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pandas&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pd&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Now you can call methods from these libraries with less text:&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;array_one&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;array_one&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;reshape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;array&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+          &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]])&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# Load a file:&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;df&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pd&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read_csv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;your_datac.csv&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;df&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;head&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;HEAD_OF_YOUR_DATA_HERE&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+&lt;p&gt;Figuring out the submodules and aliases of the Python packages you use is something
+that comes from experience. Consult the API documentation of the packages you use
+to see specific examples about usage, imports, submodles, and aliases.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Congratulations! You have completed this tutorial!&lt;/p&gt;
+&lt;p&gt;You learned:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;How to install Python with the Anaconda distribution.&lt;/li&gt;
+&lt;li&gt;How to create programming environments for your projects.&lt;/li&gt;
+&lt;li&gt;How to use &lt;code&gt;conda&lt;/code&gt; and &lt;code&gt;pip&lt;/code&gt; to install Python libraries.&lt;/li&gt;
+&lt;li&gt;How to import libraries into your Python programs.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The ins-and-outs of knowing which methods to use from the libraries you install,
+the specific syntax of libraries and submodules, and the common aliases used by
+different Python libraries is something that only comes with experience.&lt;/p&gt;
+&lt;p&gt;So get out there, code, and have some fun!&lt;/p&gt;
+&lt;h3 id=&#34;important-resources&#34;&gt;Important Resources&lt;/h3&gt;
+&lt;p&gt;Here are some useful resources related to this tutorial:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;conda&lt;/code&gt; documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://pip.pypa.io/en/stable/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;pip&lt;/code&gt; documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://anaconda.org/anaconda/repo&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;conda&lt;/code&gt; package repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://pypi.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;pip&lt;/code&gt; package repository (Python Package Index [PyPI])&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
