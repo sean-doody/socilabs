@@ -6,7 +6,25 @@
     <description>Recent content in Tags on SociLabs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sean-doody.github.io/socilabs/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://sean-doody.github.io/socilabs/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>advanced</title>
+      <link>https://sean-doody.github.io/socilabs/tags/advanced/</link>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean-doody.github.io/socilabs/tags/advanced/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://sean-doody.github.io/socilabs/tags/python/</link>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean-doody.github.io/socilabs/tags/python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>basics</title>
       <link>https://sean-doody.github.io/socilabs/tags/basics/</link>
@@ -22,15 +40,6 @@
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://sean-doody.github.io/socilabs/tags/conda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://sean-doody.github.io/socilabs/tags/python/</link>
-      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://sean-doody.github.io/socilabs/tags/python/</guid>
       <description></description>
     </item>
     

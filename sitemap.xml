@@ -2,31 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sean-doody.github.io/socilabs/tags/basics/</loc>
-    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
+    <loc>https://sean-doody.github.io/socilabs/tags/advanced/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/categories/advanced/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/categories/apis/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sean-doody.github.io/socilabs/categories/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/post/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/categories/python/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/tags/python/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/tags/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/categories/twitter/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/p/tweepy-twitter-tutorial/</loc>
+    <lastmod>2021-10-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://sean-doody.github.io/socilabs/tags/basics/</loc>
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sean-doody.github.io/socilabs/tags/conda/</loc>
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sean-doody.github.io/socilabs/p/install-python/</loc>
-    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sean-doody.github.io/socilabs/post/</loc>
-    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sean-doody.github.io/socilabs/categories/python/</loc>
-    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sean-doody.github.io/socilabs/tags/python/</loc>
-    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sean-doody.github.io/socilabs/</loc>
-    <lastmod>2021-09-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://sean-doody.github.io/socilabs/tags/</loc>
     <lastmod>2021-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://sean-doody.github.io/socilabs/archives/</loc>
