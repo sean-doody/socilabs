@@ -15,7 +15,7 @@
       <guid>https://sean-doody.github.io/socilabs/p/tweepy-twitter-tutorial/</guid>
       <description>Introduction This advanced tutorial will go over how to create custom Twitter datasets by collecting data from the official Twitter API. It assumes you have already installed Python and Anaconda and are comfortable coding in Python.
 The coding examples contained in this codelab can be implemented in your favorite text editor and run as a standalone Python program, or integrated into an IDE or notebook environment like Jupyter Lab.
-Prerequisites  Twitter Developer Account Twitter API Keys Python coding knowledge Familiarity with coding loops, dictionary objects, and indexing Familiarity with functions  This tutorial will use the following packages and versions:</description>
+Note: This tutorial uses the standard search features of the Twitter API.</description>
     </item>
     
   </channel>

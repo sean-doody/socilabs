@@ -16,6 +16,9 @@
 &lt;p&gt;This advanced tutorial will go over how to create custom Twitter datasets by collecting data from the official Twitter API. It assumes you have already &lt;a class=&#34;link&#34; href=&#34;https://sean-doody.github.io/socilabs/p/install-python/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;installed Python and Anaconda&lt;/a&gt; and are comfortable coding in Python.&lt;/p&gt;
 &lt;p&gt;The coding examples contained in this codelab can be implemented in your favorite text editor and run as a standalone Python program, or integrated into an IDE or notebook environment like Jupyter Lab.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This tutorial uses the standard search features of the Twitter API. Users with academic credentials have access to Twitter&amp;rsquo;s historical archive. To learn more about Twitter&amp;rsquo;s academic project track, see both &lt;a class=&#34;link&#34; href=&#34;https://developer.twitter.com/en/docs/projects/overview#product-track&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Twitter&amp;rsquo;s official documentation&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://docs.tweepy.org/en/stable/client.html?highlight=academichttps://docs.tweepy.org/en/stable/client.html?highlight=academic&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Tweepy&amp;rsquo;s official documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Twitter Developer Account&lt;/li&gt;
