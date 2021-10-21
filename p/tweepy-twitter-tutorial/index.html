@@ -830,6 +830,177 @@ retweet_og_favorite_count
 <span class="c1"># Split mentions back into list:</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&#34;user_mentions&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&#34;user_mentions&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">split_into_list</span><span class="p">)</span>
 </code></pre></div><p>Fantastic! Our hashtags and user mentions are back into a list.</p>
+<h2 id="putting-it-all-together">Putting it All Together</h2>
+<p>Here&rsquo;s what the final, combined, script will look like in a single Python file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">tweepy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load credentials:</span>
+<span class="n">credentials</span> <span class="o">=</span> <span class="s2">&#34;keys.json&#34;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">credentials</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">keys</span><span class="p">:</span>
+    <span class="n">api_tokens</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+
+<span class="c1"># Grab the API keys:</span>
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="n">api_tokens</span><span class="p">[</span><span class="s2">&#34;api_key&#34;</span><span class="p">]</span>
+<span class="n">API_SECRET</span> <span class="o">=</span> <span class="n">api_tokens</span><span class="p">[</span><span class="s2">&#34;api_secret&#34;</span><span class="p">]</span>
+<span class="n">BEARER_TOKEN</span> <span class="o">=</span> <span class="n">api_tokens</span><span class="p">[</span><span class="s2">&#34;bearer_token&#34;</span><span class="p">]</span>
+<span class="n">ACCESS_TOKEN</span> <span class="o">=</span> <span class="n">api_tokens</span><span class="p">[</span><span class="s2">&#34;access_token&#34;</span><span class="p">]</span>
+<span class="n">ACCESS_SECRET</span> <span class="o">=</span> <span class="n">api_tokens</span><span class="p">[</span><span class="s2">&#34;access_secret&#34;</span><span class="p">]</span>
+
+<span class="c1"># Connect to the Twitter API:</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">API_KEY</span><span class="p">,</span> <span class="n">API_SECRET</span><span class="p">)</span>
+<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">ACCESS_TOKEN</span><span class="p">,</span> <span class="n">ACCESS_SECRET</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+
+<span class="c1"># Set the function parameters:</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&#34;#covid19 OR #covid OR #covid-19 OR #coronavirus</span>
+<span class="n">lang</span> <span class="o">=</span> <span class="s2">&#34;en&#34;</span>
+<span class="n">tweet_mode</span> <span class="o">=</span> <span class="s2">&#34;extended&#34;</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">tweet_limit</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Define the scraping function:</span>
+<span class="k">def</span> <span class="nf">tweet_scraper</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&#34;en&#34;</span><span class="p">,</span> <span class="n">tweet_mode</span><span class="o">=</span><span class="s2">&#34;extended&#34;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tweet_limit</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    This function takes Tweepy search_tweets parameters as arguments and returns a Pandas
+</span><span class="s2">    dataframe containing tweet data.
+</span><span class="s2">
+</span><span class="s2">    :param query: a keyword search phrase (string)
+</span><span class="s2">    :param lang: limit results by language (default: English)
+</span><span class="s2">    :param tweet_mode: choose whether to extend tweets to full 280 characters.
+</span><span class="s2">    :param count: the number of tweets to return per page (default: 100; max: 100)
+</span><span class="s2">    :param tweet_limit: the maximum number of tweets to return (default: 1000).
+</span><span class="s2">    &#34;&#34;&#34;</span>
+
+    <span class="c1"># Data dictionary for collecting results:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;user_id&#34;</span><span class="p">:</span> <span class="p">[],</span> 
+        <span class="s2">&#34;screen_name&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;verified&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;id&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;created_at&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;full_text&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;retweet_count&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;favorite_count&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;hashtags&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;user_mentions&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;in_reply_to_user_id&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;in_reply_to_screen_name&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;is_quote_status&#34;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&#34;is_retweet&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># we will have to build this parameter ourselves; see below</span>
+        <span class="s2">&#34;retweet_og_id&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># the ID of the original retweeted tweet</span>
+        <span class="s2">&#34;retweet_og_author_id&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># the original author ID of a retweeted tweet</span>
+        <span class="s2">&#34;retweet_og_author_screen_name&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># the original author screen name of a retweeted tweet</span>
+        <span class="s2">&#34;retweet_og_author_name&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># the original author&#39;s name of a retweeted tweet</span>
+        <span class="s2">&#34;retweet_og_date&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># the date of the original tweet</span>
+        <span class="s2">&#34;retweet_og_full_text&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># OG full text of the retweet</span>
+        <span class="s2">&#34;retweet_og_retweet_count&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1"># OG retweet count</span>
+        <span class="s2">&#34;retweet_og_favorite_count&#34;</span><span class="p">:</span> <span class="p">[]</span> <span class="c1"># OG favorite count</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Search the tweets as we&#39;ve already done, but this time, plug in the paremeter values</span>
+    <span class="c1"># from the function arguments:</span>
+
+    <span class="k">for</span> <span class="n">tweet</span> <span class="ow">in</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">Cursor</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">search_tweets</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="n">query</span><span class="p">,</span> <span class="n">tweet_mode</span><span class="o">=</span><span class="n">tweet_mode</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="n">tweet_limit</span><span class="p">):</span>
+        <span class="c1"># User ID:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;user_id&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="c1"># Screen name:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;screen_name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">screen_name</span><span class="p">)</span>
+        <span class="c1"># Name:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="c1"># verified status:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;verified&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">verified</span><span class="p">)</span>
+
+        <span class="c1"># Tweet ID:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+        <span class="c1"># Date:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;created_at&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">created_at</span><span class="p">)</span>
+        <span class="c1"># Full text of tweet:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;full_text&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">full_text</span><span class="p">)</span>
+        <span class="c1"># Get retweet count:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_count&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweet_count</span><span class="p">)</span>
+        <span class="c1"># Get favorite count:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;favorite_count&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">favorite_count</span><span class="p">)</span>
+        
+        <span class="c1"># Get hashtags:</span>
+        <span class="n">hashtags</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">hashtag</span> <span class="ow">in</span> <span class="n">tweet</span><span class="o">.</span><span class="n">entities</span><span class="p">[</span><span class="s2">&#34;hashtags&#34;</span><span class="p">]:</span>
+                <span class="n">hashtags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hashtag</span><span class="p">[</span><span class="s2">&#34;text&#34;</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">hashtags</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;hashtags&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;hashtags&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hashtags</span><span class="p">)</span>
+
+        <span class="c1"># Get user mentions:</span>
+        <span class="n">mentions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">mention</span> <span class="ow">in</span> <span class="n">tweet</span><span class="o">.</span><span class="n">entities</span><span class="p">[</span><span class="s2">&#34;user_mentions&#34;</span><span class="p">]:</span>
+                <span class="n">mentions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mention</span><span class="p">[</span><span class="s2">&#34;screen_name&#34;</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mentions</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;user_mentions&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;user_mentions&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mentions</span><span class="p">)</span>
+
+        <span class="c1"># In reply to user id:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;in_reply_to_user_id&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">in_reply_to_user_id</span><span class="p">)</span>
+        <span class="c1"># In reply to user screen name:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;in_reply_to_screen_name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">in_reply_to_screen_name</span><span class="p">)</span>
+        <span class="c1"># Check if quote status:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;is_quote_status&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">is_quote_status</span><span class="p">)</span>
+
+        <span class="c1"># Check retweeted status:</span>
+        <span class="k">if</span> <span class="s2">&#34;retweeted_status&#34;</span> <span class="ow">in</span> <span class="n">tweet</span><span class="o">.</span><span class="n">_json</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="c1"># Then it is a retweet:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;is_retweet&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># Get OG tweet id:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_id&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="c1"># Get OG author ID:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_author_id&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+            <span class="c1"># Get OG author screen name:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_author_screen_name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">screen_name</span><span class="p">)</span>
+            <span class="c1"># Get OG author name:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_author_name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="c1"># Get date of OG tweet:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_date&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">created_at</span><span class="p">)</span>
+            <span class="c1"># Get OG full text:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_full_text&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">full_text</span><span class="p">)</span>
+            <span class="c1"># Get OG retweet count:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_retweet_count&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">retweet_count</span><span class="p">)</span>
+            <span class="c1"># Get OG favorite count:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_favorite_count&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tweet</span><span class="o">.</span><span class="n">retweeted_status</span><span class="o">.</span><span class="n">favorite_count</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;is_retweet&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_id&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_author_id&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_author_screen_name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_author_name&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_date&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_full_text&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_retweet_count&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;retweet_og_favorite_count&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+    <span class="c1"># Save to Pandas dataframe:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="c1"># Call the function and save results:</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">tweet_scraper</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">query</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">,</span> <span class="n">tweet_mode</span><span class="o">=</span><span class="n">tweet_mode</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">tweet_limit</span><span class="o">=</span><span class="n">tweet_limit</span><span class="p">)</span>
+
+<span class="c1"># Save our results:</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&#34;twitter_data&#34;</span><span class="o">.</span><span class="n">json</span><span class="s2">&#34;)</span>
+</code></pre></div><p>That&rsquo;s it! A complete Twitter scraping program.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>This tutorial covered how to build custom Twitter datasets using the Tweepy package in Python and the Twitter API. We covered a lot of ground and dug in to some complex coding examples. This is just the tip of the iceberg: there is so much more to cover! I strongly recommend you <a class="link" href="https://docs.tweepy.org/en/stable/"  target="_blank" rel="noopener"
     >check out the official Tweepy documentation</a> to familiarize yourself the ins and outs of the package.</p>
@@ -1043,6 +1214,7 @@ retweet_og_favorite_count
         <li><a href="#saving-to-a-csv">Saving to a CSV</a></li>
       </ol>
     </li>
+    <li><a href="#putting-it-all-together">Putting it All Together</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ol>
 </nav>
